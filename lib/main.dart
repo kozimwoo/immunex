@@ -1,8 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:model_viewer_plus/model_viewer_plus.dart';
+import 'package:device_preview/device_preview.dart';
 
 void main() {
-  runApp(const ImmunexApp());
+  runApp(
+    DevicePreview(
+      enabled: true,
+      builder: (context) => ImmunexApp(),
+    ),
+  );
 }
 
 class ImmunexApp extends StatelessWidget {
@@ -13,6 +19,11 @@ class ImmunexApp extends StatelessWidget {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       title: 'Immunex',
+
+      useInheritedMediaQuery: true,
+      locale: DevicePreview.locale(context),
+      builder: DevicePreview.appBuilder,
+
       theme: ThemeData.dark(),
       home: const HomePage(),
     );

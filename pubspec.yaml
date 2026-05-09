@@ -13,6 +13,7 @@ dependencies:
 
   cupertino_icons: ^1.0.8
   model_viewer_plus: ^1.10.0
+  device_preview: ^1.2.0
 
 dev_dependencies:
   flutter_test:
